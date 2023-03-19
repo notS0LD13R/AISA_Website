@@ -1,17 +1,72 @@
+@font-face {
+    font-family: Orbitron;
+    src: url(../Fonts/Orbitron-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Solignant ;
+    src: url(../Fonts/Soligant-d98nK.otf);
+}
+
+@font-face {
+    font-family: Supermarket ;
+    src: url(../Fonts/Supermarketed-wXZ3.ttf);
+}
+
+
 $primaryblack: black;
-$opacity: rgb(255,255,255,0.5);
+$opacity: rgba(255, 255, 255, 0.5);
+
+$color-font:rgb(220, 220, 220);
+$teal-light:#05B790;
+$teal-neutral:#00757B;
+$teal-dark:#1F3439;
+
+
+$gradient-dark:linear-gradient(45deg,$teal-dark,$teal-neutral);
+$gradient-light:linear-gradient(45deg,$teal-light,$teal-neutral);
+
+$nav-height:150px;
+
+
+$major-font:Orbitron;
+$minor-font:Solignant;
 * {
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    color:$color-font;
 }
-#hero{
-    background-image: url(../images/Hero_bg.jpg);
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
+
+//Utils Class
+.grad-heading{
+    background-image: $gradient-light;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 2s;
+
+    &:hover{
+        background-position: 100px 100px;
+    }
 }
+//Util Tags
+h1{
+    font-family: $major-font;
+    font-size: 2.7rem;
+}
+
+        
+p{
+    font-family: $minor-font;
+    font-size: 1.5rem;
+}
+
+body{
+    position: relative;
+    z-index: -11;
+}
+
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -67,5 +122,85 @@ nav{
     z-index: 110;
     background-color:$opacity ;
 }
+
+.hero{
+    z-index: -10;
+    background-image: url(../images/Hero_bg.jpg);
+    min-height: 100vh;
+    background-size: cover;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    position: sticky;
+    top: 0px;
+
+    color: white;
+
+    .hero-content{
+        flex:1 1 400px;
+        max-width: 700px;
+        
+    }
+    
+
+    .earth-model{
+        width: 500px;
+        height: 500px;
+
+        
+    }
+
+
+}
+
+
+
+.Frame-1{
+    background-color: $teal-neutral;
+    height: 200vh;
+    z-index: -9;
+    position: sticky;
+    top: 0px;
+
+    padding: $nav-height 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: center;
+    p{
+        text-align: center;
+    }
+
+    .About-Us{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        padding: 2rem;
+       
+    }
+    .About-Us-2{
+        display: flex;
+        flex-wrap: wrap;
+
+        .Vision,.Mission{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex: 1 1 250px;
+
+            padding: 2rem;
+        }
+       
+    }
+
+}
+
+
+
 
 

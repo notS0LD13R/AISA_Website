@@ -10,26 +10,73 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   </head>
   <body>
-    <section id="hero">
-      <nav>
-        <div class="container">
-            <img src="src\images\logo.svg" alt="logo">
-            <div class="menu">
-              <a href="#" class="is-active">HOME</a>
-              <a href="#">ABOUT</a>
-              <a href="#">GALLERY</a>
-              <a href="#">EVENTS</a>
-              <a href="#">CONTACT</a>
-            </div>
-            <button class="hamburger is-active">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-      </nav>
+    <nav>
+      <div class="container">
+          <img src="src\images\logo.svg" alt="logo">
+          <div class="menu">
+            <a href="#" class="is-active">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">GALLERY</a>
+            <a href="#">EVENTS</a>
+            <a href="#">CONTACT</a>
+          </div>
+          <button class="hamburger is-active">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          The Club Made On Earth<br>
+           To Inspire A Future In Space
+        </h1>   
+        <p>
+          AISA MACE aims to cause worldwide 
+          orgies and commit genocide
+        </p>
+      </div>
+      <div class="earth-model" id="earth-model">
+        <canvas id="webgl" ></canvas>
+      </div>
     </section>
+
+    <section class="Frame-1">
+      <div class="About-Us">
+        <h1>ABOUT <span class="grad-heading">US</span> </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          A facere ipsum laudantium non nihil modi culpa fugiat rerum
+          odio tenetur ab, repudiandae veniam. Consequatur incidunt modi
+          autem error ipsum nostrum repellendus ipsam. Similique eveniet
+          possimus dolor velit expedita voluptatem aspernatur, 
+          dicta vitae cupiditate omnis ipsam asperiores tempore sequi minus in.</p>
+      </div>
+      <div class="About-Us-2">
+        <div class="Vision">
+          <h1>OUR <span class="grad-heading">VISION</span> </h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            A facere ipsum laudantium non nihil modi culpa fugiat rerum
+            odio tenetur ab, repudiandae veniam. Consequatur incidunt modi
+            autem error ipsum nostrum repellendus ipsam. Similique eveniet
+            possimus dolor velit expedita voluptatem aspernatur,
+            dicta vitae cupiditate omnis ipsam asperiores tempore sequi minus in.</p>
+        </div>
+        <div class="Mission">
+          <h1>OUR <span class="grad-heading">MISSION</span> </h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            A facere ipsum laudantium non nihil modi culpa fugiat rerum
+            odio tenetur ab, repudiandae veniam. Consequatur incidunt modi
+            autem error ipsum nostrum repellendus ipsam. Similique eveniet
+            possimus dolor velit expedita voluptatem aspernatur,
+            dicta vitae cupiditate omnis ipsam asperiores tempore sequi minus in.</p>
+        </div>
+      </div>
+    </section>
+
     
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/Scripts/EarthModel.ts"></script>
   </body>
 </html>
