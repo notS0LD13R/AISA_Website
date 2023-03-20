@@ -58,7 +58,7 @@ space.addEventListener('mousemove',(e)=>{
     const rect = (e.target as HTMLDivElement).getBoundingClientRect();
     
     rotationSpeed.y=(e.clientX-rect.x)/width-0.5;
-    rotationSpeed.x=(e.clientY-rect.y)/height-0.5;
+    //rotationSpeed.x=(e.clientY-rect.y)/height-0.5;
     //console.log(rotationSpeed.x,rotationSpeed.y)
 
 })
