@@ -1,5 +1,5 @@
 import './Styles/styles.scss'
-import ts from './Scripts/navbar'
-ts();
+import nav from './Scripts/navbar'
+nav();
 
 
