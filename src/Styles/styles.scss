@@ -490,17 +490,115 @@ body{
 }
 
 //gallery
+
+@keyframes pan-image {  
+    0% {
+      background-position: 36% 42%;
+      background-size: 200%;
+    }
+    
+    20% {
+      background-position: 30% 35%;
+      background-size: 200%;
+    }
+    
+    20.0001% { /* -- View 2 -- */
+      background-position: 60% 85%;
+      background-size: 500%;
+    }
+    
+    40% {
+      background-position: 49% 81%;
+      background-size: 500%;
+    }
+    
+    40.0001% { /* -- View 3 -- */
+      background-position: 80% 42%;
+      background-size: 300%;
+    }
+    
+    60% {
+      background-position: 84% 33%;
+      background-size: 300%;
+    }
+    
+    60.0001% { /* -- View 4 -- */
+      background-position: 0% 0%;
+      background-size: 300%;
+    }
+    
+    80% {
+      background-position: 15% 4%;
+      background-size: 300%;
+    }
+    
+    80.0001% { /* -- View 5 -- */
+      background-position: 80% 10%;
+      background-size: 300%;
+    }
+    
+    100% {
+      background-position: 72% 14%;
+      background-size: 300%;
+    }
+  }
+@keyframes pan-overlay {
+    from {
+      background-position: 0% 0%;
+    }
+    
+    to {
+      background-position: 0% -100%;
+    }
+  }
+$galeryprime: rgb(5,183,144,0.29) ;
 #gallery{
-    margin: 20rem;
     .gallery-container{
         padding: 2rem;
         .sp1{
-            width: 20rem;
-            aspect-ratio: 9/16;
-            border:2px solid #1F3439;
+            width: 13rem;
+            aspect-ratio: 10/16;
+            display: flex;
+            border-radius: 1rem;
+            border: 3px solid rgb(5,183,144,0.8);
+            background-color: rgb(29,30,29,0.0);
+            position: relative;
+            overflow: hidden;
+            
             
         }
     }
+}
+.sp1-overlay{
+    background: linear-gradient(
+    $galeryprime,
+    $galeryprime 2px,
+    transparent 3px,
+    transparent 4px
+  );
+  background-size: 100% 4px;
+  height: 100%;
+  width:100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  top: 0px;
+  z-index: 125;
+  
+
+}
+.sp1-image{
+  background-image: url("https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 300%;
+  background-position: 0% 0%;
+  filter: sepia(80%) hue-rotate(155deg);
+  opacity: 0.6;
+  animation: pan-image 15s linear infinite;
 }
 
 
