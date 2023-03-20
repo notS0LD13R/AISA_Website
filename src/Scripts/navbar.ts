@@ -1,6 +1,6 @@
 export default()=>{
-    const mobilebutton=document.querySelector('.menu-mobile');
-    const hamburger = document.querySelector('.hamburger');
+    const mobilebutton=document.querySelector('.menu-mobile') as HTMLElement;
+    const hamburger = document.querySelector('.hamburger') as HTMLElement;
     hamburger.addEventListener('click',function(){
         this.classList.toggle('is-active');
         mobilebutton.classList.toggle('is-open');

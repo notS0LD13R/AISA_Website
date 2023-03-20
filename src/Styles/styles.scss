@@ -69,6 +69,7 @@ body{
 
 
 
+// navbar
 
 .container{
     max-width: 1200px;
@@ -98,7 +99,8 @@ body{
     .hamburger{
         display: block;
         position: relative;
-        z-index: 1;
+        z-index: 3;
+        margin-right: 10px;
         user-select: none;
         appearance: none;
         border: none;
@@ -137,9 +139,11 @@ body{
 }
 
 .navbar{
-    position: sticky;
-    top: 0px;
-    z-index: 110;
+    position: fixed;
+    top: 15px;
+    width: 90vw;
+    overflow: hidden;
+    z-index: 1;
     background-color:rgb(0,0,0,0) ;
     &.is-active{
         background-color: $opacity;
@@ -157,6 +161,7 @@ body{
     position: fixed;
     top:0px;
     left:0px;
+    z-index: 0;
     width: 100%;
     height: 100%;
     background-color: #00757B;
@@ -191,14 +196,16 @@ body{
         opacity:1;
     } 
 
-    .hamburger{
+    .container .hamburger{
         display:none;
-        opacity:0;
+    
     }
     .menu-mobile{
         display:none;
     }
 }
+
+//navbar end
 
 .hero{
     z-index: -10;
@@ -302,6 +309,19 @@ body{
     }
 }
 
+//gallery
+#gallery{
+    margin: 20rem;
+    .gallery-container{
+        padding: 2rem;
+        .sp1{
+            width: 20rem;
+            aspect-ratio: 9/16;
+            border:2px solid #1F3439;
+            
+        }
+    }
+}
 
 
 
