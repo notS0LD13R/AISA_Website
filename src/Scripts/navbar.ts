@@ -11,7 +11,6 @@ export default()=>{
     );
     const buttons = document.querySelectorAll('div.menu>a');
     let prev=buttons[0]
-    console.log(prev)
     buttons.forEach((button)=>{
         button.addEventListener('click',()=>{
             prev.classList.toggle('is-active');
