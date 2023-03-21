@@ -47,7 +47,7 @@ loader.load('src/3dModels/earth1.glb',
 )
 
 const light=new THREE.DirectionalLight(0xADD8E6,4)
-light.position.set(2,0,2)
+light.position.set(0,0,1)
 scene.add(light)
 
 const rotationSpeed={
