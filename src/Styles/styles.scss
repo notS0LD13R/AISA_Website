@@ -255,7 +255,7 @@ body{
     background-color: $teal-neutral;
     z-index: -9;
     position: sticky;
-    top: 0px;
+    top: calc(100vh - var(--height));
 
     padding: $nav-height 2rem;
 
@@ -551,6 +551,10 @@ body{
       background-position: 0% -100%;
     }
   }
+
+.Frame-2{
+    z-index: -8;
+}
 $galeryprime: rgb(5,183,144,0.29) ;
 #gallery{
     .gallery-container{

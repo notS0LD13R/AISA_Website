@@ -39,7 +39,7 @@ loader.load('src/3dModels/earth1.glb',
         
     },
     (progress)=>{
-        console.log('progress:',progress.loaded/progress.total)
+        //console.log('progress:',progress.loaded/progress.total)
     },
     (error)=>{
         console.log(error)
