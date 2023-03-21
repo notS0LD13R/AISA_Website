@@ -164,6 +164,9 @@ body{
         margin-right: 25px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
+    &.isnt{
+        background-color: rgb(0,0,0,0);
+    }
 }
 
 .menu-mobile{
@@ -213,6 +216,7 @@ body{
         display:none;
     }
 }
+
 
 //navbar end
 
