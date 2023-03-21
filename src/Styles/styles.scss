@@ -829,7 +829,108 @@ $galeryprime: rgb(5,183,144,0.29) ;
         }
     }
 }
+//footer start
+#footer{
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-color: $teal-neutral;
 
+    padding-top: 10rem;
+    .created{
+        display: flex;
+        justify-content: center;
+        margin: 1rem;
+        margin-top: 2rem;
+        p{
+            display: inline;
+            font-size: medium;
+            font-weight: 200;
+            font-family:sans-serif;
+        }
+        a{
+            display: inline;
+            font-size: medium;
+            font-weight: 200;
+            font-family:sans-serif;
+            color: $teal-dark;
+        }
+    }
+    .footer-content{
+        width: 100vw;
+        display: flex;
+        p{
+            font-size: 25px;
+            font-family: $major-font;
+            text-align: center;
+        }
+        
+        .left{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: center;
+            width: 50%;
+            margin-left: 2rem;
+            img{
+                width: 250px;
+            }
+            p{
+                text-align: left;
+            }
+            
+        }
+        
+        .right{
+            display: flex;
+            width: 50%;
+            padding-left: 7%;
+            align-items:end;
+
+            .idk{
+                width: 50%;
+                margin: 1rem;
+                
+            }
+            p{
+                text-align: left;
+            }
+            a{
+                font-size: 23px;
+                font-family: $major-font;
+                
+            }
+            .footer-link{
+                display: flex;
+                align-items:center;
+                margin-top: 10px;
+            }
+        }
+    }
+    .curve{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+
+        svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 158px;
+        }
+        .shape-fill {
+            fill:$teal-neutral-lighter ;
+        }
+        
+    }
+}
+
+//footer end
 
 @media (max-width:600px) {
     :root{
@@ -843,8 +944,28 @@ $galeryprime: rgb(5,183,144,0.29) ;
     .carousel-section{
         transform: scale(0.65);
     }
+    
 }
+@media (max-width:900px){
+    .footer-content{
+        flex-direction: column;
+        justify-items: center;
+        justify-content: space-between;
+        .left{
+            align-items: center;
+            p{
+                text-align: center;
+            }
+        }
+        .right{
+            flex-direction: column;
+            .idk{
+                width:100%;
+            }
+        }
+    }
 
+}
 @media (min-width: 600px ) {
     .container .menu{
         display:flex;
@@ -858,6 +979,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
     .menu-mobile{
         display:none;
     }
+    
 }
 
 
