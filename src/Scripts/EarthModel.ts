@@ -29,7 +29,7 @@ const scene= new THREE.Scene();
 const loader=new GLTFLoader()
 let earth:any=null
 
-loader.load('src/3dModels/earth1.glb',
+loader.load('/3dModels/earth1.glb',
     (gltf)=>{
         console.log(gltf)
         earth=gltf.scene
@@ -39,7 +39,7 @@ loader.load('src/3dModels/earth1.glb',
         
     },
     (progress)=>{
-        //console.log('progress:',progress.loaded/progress.total)
+        console.log('progress:',progress.loaded/progress.total)
     },
     (error)=>{
         console.log(error)
@@ -47,7 +47,7 @@ loader.load('src/3dModels/earth1.glb',
 )
 
 const light=new THREE.DirectionalLight(0xADD8E6,4)
-light.position.set(0,0,1)
+light.position.set(2,0,2)
 scene.add(light)
 
 const rotationSpeed={

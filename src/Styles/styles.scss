@@ -262,7 +262,7 @@ body{
     background-color: $teal-neutral;
     z-index: -9;
     position: sticky;
-    top: calc(100vh - var(--height));
+    top: calc(125vh - var(--height));
 
     padding: $nav-height 2rem;
 
