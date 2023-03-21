@@ -78,6 +78,7 @@ body{
 
 
 
+// navbar
 
 .container{
     max-width: 1200px;
@@ -107,7 +108,8 @@ body{
     .hamburger{
         display: block;
         position: relative;
-        z-index: 1;
+        z-index: 3;
+        margin-right: 10px;
         user-select: none;
         appearance: none;
         border: none;
@@ -146,9 +148,11 @@ body{
 }
 
 .navbar{
-    position: sticky;
-    top: 0px;
-    z-index: 110;
+    position: fixed;
+    top: 15px;
+    width: 90vw;
+    overflow: hidden;
+    z-index: 1;
     background-color:rgb(0,0,0,0) ;
     &.is-active{
         background-color: $opacity;
@@ -166,6 +170,7 @@ body{
     position: fixed;
     top:0px;
     left:0px;
+    z-index: 0;
     width: 100%;
     height: 100%;
     background-color: #00757B;
@@ -200,14 +205,16 @@ body{
         opacity:1;
     } 
 
-    .hamburger{
+    .container .hamburger{
         display:none;
-        opacity:0;
+    
     }
     .menu-mobile{
         display:none;
     }
 }
+
+//navbar end
 
 .hero{
     z-index: -10;
@@ -482,6 +489,163 @@ body{
     }
 }
 
+//gallery
+
+@keyframes pan-image {  
+    0% {
+      background-position: 36% 42%;
+      background-size: 100%;
+    }
+    
+    20% {
+      background-position: 30% 35%;
+      background-size: 100%;
+    }
+    
+    20.0001% { /* -- View 2 -- */
+      background-position: 60% 85%;
+      background-size: 300%;
+    }
+    
+    40% {
+      background-position: 49% 81%;
+      background-size: 300%;
+    }
+    
+    40.0001% { /* -- View 3 -- */
+      background-position: 80% 42%;
+      background-size: 200%;
+    }
+    
+    60% {
+      background-position: 84% 33%;
+      background-size: 200%;
+    }
+    
+    60.0001% { /* -- View 4 -- */
+      background-position: 0% 0%;
+      background-size: 200%;
+    }
+    
+    80% {
+      background-position: 15% 4%;
+      background-size: 200%;
+    }
+    
+    80.0001% { /* -- View 5 -- */
+      background-position: 80% 10%;
+      background-size: 200%;
+    }
+    
+    100% {
+      background-position: 72% 14%;
+      background-size: 200%;
+    }
+  }
+@keyframes pan-overlay {
+    from {
+      background-position: 0% 0%;
+    }
+    
+    to {
+      background-position: 0% -100%;
+    }
+  }
+$galeryprime: rgb(5,183,144,0.29) ;
+#gallery{
+    .gallery-container{
+        width:90vw;
+        padding: 2rem;
+        display: flex;
+        padding: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        .sp1{
+            
+            display: flex;
+            border-radius: 1rem;
+            border: 3px solid rgb(5,183,144,0.8);
+            background-color: rgb(29,30,29,0.0);
+            position: relative;
+            overflow: hidden;
+            margin: 1rem;
+            transition: transform 0.3s;
+            &.one{
+                width: 15rem;
+                aspect-ratio: 10/16;
+            }
+            &.three{
+                width:20rem;
+                aspect-ratio: 10/16;
+            }
+            &.two{
+                width: 30rem;
+                aspect-ratio: 16/10;
+            
+            }
+            &.four{
+                width: 34rem;
+                aspect-ratio: 16/10;
+
+            }
+            &:hover{
+                
+                transform: scale(102%) ;
+            }
+        }
+        
+        
+    }
+}
+.sp1-overlay{
+    background: linear-gradient(
+    $galeryprime,
+    $galeryprime 2px,
+    transparent 3px,
+    transparent 4px
+  );
+  background-size: 100% 4px;
+  height: 100%;
+  width:100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  top: 0px;
+  z-index: 125;
+  
+
+}
+.sp1-image{
+ 
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 300%;
+  background-position: 0% 0%;
+//   filter: sepia(80%) hue-rotate(155deg);
+  opacity: 0.6;
+  animation: pan-image 15s linear infinite;
+  &.one{
+    background-image: url("https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+  }
+  &.two{
+    background-image: url('https://wallpapers.com/images/file/spiral-milky-way-galaxy-57bi3fxyfrkifr0t.jpg');
+  }
+  &.three{
+    background-image: url('https://wallpapers.com/images/hd/red-spiral-galaxy-in-outer-space-hd-desktop-g3uy8dzab29cuv8l.webp');
+  }
+  &.four{
+    background-image: url('https://wallpapers.com/images/hd/starry-night-over-mountains-zt0to2lebx20wyzt.webp');
+  }
+  &.five{
+    background-image: url('https://wallpapers.com/images/high/star-galaxy-glow-light-tbyzxi8buusue6kx.webp');
+  }
+  &.six{
+    background-image: url('https://wallpapers.com/images/hd/hd-blue-galaxy-nebula-for-computer-x7tblw58ru3zbqe4.webp');
+  }
+}
 
 
 
