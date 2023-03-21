@@ -47,7 +47,7 @@ loader.load('/3dModels/earth1.glb',
 )
 
 const light=new THREE.DirectionalLight(0xADD8E6,4)
-light.position.set(2,0,2)
+light.position.set(0,0,2)
 scene.add(light)
 
 const rotationSpeed={
@@ -58,6 +58,7 @@ space.addEventListener('mousemove',(e)=>{
     const rect = (e.target as HTMLDivElement).getBoundingClientRect();
     
     rotationSpeed.y=(e.clientX-rect.x)/width-0.5;
+    console.log(rotationSpeed.y*0.03)
     //rotationSpeed.x=(e.clientY-rect.y)/height-0.5;
     //console.log(rotationSpeed.x,rotationSpeed.y)
 
@@ -68,8 +69,8 @@ space.addEventListener('mousemove',(e)=>{
 function animate(){
     requestAnimationFrame(animate);
     if(earth){
-        earth.rotation.x+=rotationSpeed.x*0.03
-        earth.rotation.y+=rotationSpeed.y*0.03
+        earth.rotation.x+=rotationSpeed.x*0.01
+        earth.rotation.y+=rotationSpeed.y*0.01
     }
     
     renderer.render(scene,maincamera);
