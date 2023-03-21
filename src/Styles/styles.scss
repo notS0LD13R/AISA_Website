@@ -612,8 +612,20 @@ $galeryprime: rgb(5,183,144,0.29) ;
 
             }
             &:hover{
+
+                transform: scale(110%) ;
+            }
+            &:hover .sp1-image{
+                z-index: 190;
+                animation: none;
+                background-size: cover;
                 
-                transform: scale(102%) ;
+            }
+            &:hover video{
+                z-index: 190;
+                width: max-content;
+            
+        
             }
         }
         
@@ -634,6 +646,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
   position: absolute;
   top: 0px;
   z-index: 125;
+  
   
 
 }
@@ -667,7 +680,15 @@ $galeryprime: rgb(5,183,144,0.29) ;
   &.six{
     background-image: url('../images/gallery5.JPG');
   }
+  &.free{
+    z-index: 200;
+    animation: none;
+    background-size: cover;
+  }
+  
+  
 }
+//gallery end
 
 .carousel-section{
     display: flex;
@@ -702,7 +723,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
         }
     }
 }
-
+//gallery end
 .carousel-container{
     max-width: 1000px;
     position: relative;
