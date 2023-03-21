@@ -169,6 +169,9 @@ body{
         margin-right: 25px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
+    &.isnt{
+        background-color: rgb(0,0,0,0);
+    }
 }
 
 .menu-mobile{
@@ -207,6 +210,7 @@ body{
 *::-webkit-scrollbar{
     display: none;
 }
+
 
 //navbar end
 
@@ -562,8 +566,15 @@ body{
 $galeryprime: rgb(5,183,144,0.29) ;
 #gallery{
 
+    text-align: center;
+    video{
+        min-width: max-content;
+    
+
+
     h1{
         text-align: center;
+
     }
     .gallery-container{
         width:90vw;
@@ -637,25 +648,24 @@ $galeryprime: rgb(5,183,144,0.29) ;
   background-size: 300%;
   background-position: 0% 0%;
 //   filter: sepia(80%) hue-rotate(155deg);
-  opacity: 0.6;
+  opacity: 1;
   animation: pan-image 15s linear infinite;
   &.one{
-    background-image: url("https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+    background-image: url("../images/gallery3.jpg");
   }
   &.two{
-    background-image: url('https://wallpapers.com/images/file/spiral-milky-way-galaxy-57bi3fxyfrkifr0t.jpg');
+    background-image: url('../images/gallery2.JPG');
   }
   &.three{
-    background-image: url('https://wallpapers.com/images/hd/red-spiral-galaxy-in-outer-space-hd-desktop-g3uy8dzab29cuv8l.webp');
-  }
+    background-image: url('../images/gallery6.jpg');  }
   &.four{
-    background-image: url('https://wallpapers.com/images/hd/starry-night-over-mountains-zt0to2lebx20wyzt.webp');
+    background-image: url('../images/gallery1.jpg');
   }
   &.five{
-    background-image: url('https://wallpapers.com/images/high/star-galaxy-glow-light-tbyzxi8buusue6kx.webp');
+    background-image: url('../images/gallery4.jpg');
   }
   &.six{
-    background-image: url('https://wallpapers.com/images/hd/hd-blue-galaxy-nebula-for-computer-x7tblw58ru3zbqe4.webp');
+    background-image: url('../images/gallery5.JPG');
   }
 }
 
