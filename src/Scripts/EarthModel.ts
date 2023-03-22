@@ -14,7 +14,7 @@ const renderer = new THREE.WebGL1Renderer({
 
 renderer.setClearColor( 0xffffff, 0);
 renderer.setSize(width,height);
-console.log(width,height)
+//console.log(width,height)
 
 const maincamera = new THREE.PerspectiveCamera(
     60,//FOV
@@ -31,17 +31,17 @@ let earth:any=null
 
 loader.load('/3dModels/earth1.glb',
     (gltf)=>{
-        console.log(gltf)
+        //console.log(gltf)
         earth=gltf.scene
         earth.position.set(0,0,0)
         
         scene.add(earth)
         
     },
-    (progress)=>{
+    ()=>{
         // console.log('progress:',progress.loaded/progress.total)
     },
-    (error)=>{
+    ()=>{
         // console.log(error)
     }
 )
