@@ -884,7 +884,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
         .left{
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             margin-left: 2rem;
             img{
@@ -898,7 +898,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
         
         .right{
             display: flex;
-            width: 50%;
+            min-width: 24rem;
             align-items:center;
 
             .idk{
@@ -922,6 +922,12 @@ $galeryprime: rgb(5,183,144,0.29) ;
                 display: flex;
                 align-items:center;
                 margin-top: 10px;
+                gap: 0.5rem;
+                font-size: 1rem;
+
+                img{
+                    width: 25px;
+                }
             }
         }
     }
