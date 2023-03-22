@@ -39,6 +39,11 @@ $nav-height:150px;
 
 $major-font:Orbitron;
 $minor-font:Grotley;
+
+:root{
+    scroll-behavior: smooth;
+}
+
 * {
     margin:0;
     padding: 0;
@@ -836,10 +841,11 @@ $galeryprime: rgb(5,183,144,0.29) ;
     }
 }
 //footer start
-#footer{
+.footer{
     position: relative;
     display: block;
     width: 100vw;
+    overflow: hidden;
     height: 100%;
     background-color: $teal-neutral;
 
@@ -864,10 +870,13 @@ $galeryprime: rgb(5,183,144,0.29) ;
         }
     }
     .footer-content{
-        width: 100vw;
         display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        font-size: 1.5rem;
         p{
-            font-size: 25px;
+            font-size: 1.5rem;
             font-family: $major-font;
             text-align: center;
         }
@@ -876,11 +885,10 @@ $galeryprime: rgb(5,183,144,0.29) ;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            align-content: center;
-            width: 50%;
+            align-items: center;
             margin-left: 2rem;
             img{
-                width: 250px;
+                width: 15.625rem;
             }
             p{
                 text-align: left;
@@ -891,20 +899,23 @@ $galeryprime: rgb(5,183,144,0.29) ;
         .right{
             display: flex;
             width: 50%;
-            padding-left: 7%;
-            align-items:end;
+            align-items:center;
 
             .idk{
                 width: 50%;
                 margin: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 
             }
             p{
                 text-align: left;
             }
             a{
-                font-size: 23px;
+                font-size: inherit;
                 font-family: $major-font;
+                text-decoration: none;
                 
             }
             .footer-link{
@@ -918,7 +929,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100vw;
+        min-width: 1500px;
         overflow: hidden;
         line-height: 0;
         transform: rotate(180deg);
