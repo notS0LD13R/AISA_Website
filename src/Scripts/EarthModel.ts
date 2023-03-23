@@ -20,9 +20,9 @@ const maincamera = new THREE.PerspectiveCamera(
     60,//FOV
     width/height,//Aspect Ratio
     0.1,//Near Plane
-    100//Far Plane
+    1000//Far Plane
 )
-maincamera.position.set(0,0,0.5)
+maincamera.position.set(0,0,.5)
 
 const scene= new THREE.Scene();
 
@@ -38,17 +38,19 @@ loader.load('/3dModels/earth1.glb',
         scene.add(earth)
         
     },
-    ()=>{
-        // console.log('progress:',progress.loaded/progress.total)
+    (progress)=>{
+         console.log('progress:',progress.loaded/progress.total)
     },
     ()=>{
         // console.log(error)
     }
 )
 
-const light=new THREE.DirectionalLight(0xADD8E6,4)
-light.position.set(0,0,2)
+const light=new THREE.DirectionalLight(0xFFFFFF,5)
+light.position.set(0,0,5)
 scene.add(light)
+const alight = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( alight );
 
 const rotationSpeed={
     x:0,
@@ -58,7 +60,6 @@ space.addEventListener('mousemove',(e)=>{
     const rect = (e.target as HTMLDivElement).getBoundingClientRect();
     
     rotationSpeed.y=(e.clientX-rect.x)/width-0.5;
-    console.log(rotationSpeed.y*0.03)
     //rotationSpeed.x=(e.clientY-rect.y)/height-0.5;
     //console.log(rotationSpeed.x,rotationSpeed.y)
 
