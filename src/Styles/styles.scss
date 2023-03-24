@@ -225,6 +225,7 @@ body{
 
     &.tran{
         *{transition: .5s;}
+        &::before{transition: .5s;}
     }
 
     &::before{
@@ -235,7 +236,6 @@ body{
         background-color: black;
         margin: calc(50vh - 100px) calc(50vw - 100px);
         border-radius: 50%;
-        
         transform: scale(0);
     }
     img{
