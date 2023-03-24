@@ -4,20 +4,14 @@
 }
 
 @font-face {
-    font-family: Solignant;
-    src: url(../Fonts/Soligant-d98nK.otf);
-}
-
-@font-face {
-    font-family: Supermarket ;
-    src: url(../Fonts/Supermarketed-wXZ3.ttf);
-}
-
-@font-face {
     font-family: Grotley;
     src: url(../Fonts/grotley.regular.otf);
 }
 
+@font-face {
+    font-family: SpaceExplorer;
+    src: url(../Fonts/SPACEEXPLORER.ttf);
+}
 
 
 
@@ -225,9 +219,54 @@ body{
 
 //navbar end
 
+.loader{
+    position: fixed;
+    z-index: 100;
+
+    &.tran{
+        *{transition: .5s;}
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        margin: calc(50vh - 100px) calc(50vw - 100px);
+        border-radius: 50%;
+        
+        transform: scale(0);
+    }
+    img{
+        
+        transform: scale(0);
+        position: absolute;
+        width: 200px;
+        margin: calc(50vh - 100px) calc(50vw - 100px);
+    }
+
+    &.active{
+        img{
+            
+            transform: scale(1);
+        }
+    
+        &::before{
+            
+            transform: scale(10);
+        }
+    }
+
+    
+    
+    
+}
+
+
 .hero{
     z-index: -10;
-    background-image: url(../images/Hero_bg.jpg);
+    background-image: url(../images/herobg3.jpg);
     min-height: 100vh;
     background-size: cover;
 
@@ -242,14 +281,21 @@ body{
     color: white;
 
     .hero-content{
+        position: relative;
         flex:1 1 400px;
         max-width: 700px;
         text-align: center;
         h1{
+            font-family: SpaceExplorer;
+            font-size: 5rem;
+        }
+        h2{
             color:transparent;
             -webkit-text-stroke: 2px white;
-            font-size: 2.9rem;
+            font-size: 2.5rem;
         }
+
+        
         
     }
     
@@ -258,11 +304,22 @@ body{
         position: fixed;
         margin-left: 1rem;
         z-index: -1;
-        width: 31.25rem;
-        height: 31.25rem;
-        canvas{
-            width: 31.25rem !important;
-            height: 31.25rem !important;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-content: center;
+        overflow: hidden;
+        // canvas{
+        //     width: 50rem !important;
+        //     height: 50rem !important;
+        // }
+
+        &::before{
+            content: '';
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
         }
 
         
@@ -436,7 +493,7 @@ body{
             gap: 1rem;
             .glassbox{
                 // width: 300px;
-                height: 270px;
+                height: 300px;
                 background-color: rgba( 255, 255, 255, 0.02 );
                 border-radius: 5px;
                 position: relative;
@@ -1005,5 +1062,68 @@ $galeryprime: rgb(5,183,144,0.29) ;
     
 }
 
+.bobtext{
+    transition: all 0.3s ease-out;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
 
+    &:hover{
+        -webkit-animation-name: rubberBand;
+        animation-name: rubberBand;
+        &:nth-of-type(even){
+            color: $teal-light;
+        }
+    
+        &:nth-of-type(odd){
+            color: $teal-neutral;
+        }
+    }
 
+    
+}
+@keyframes rubberBand {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        -ms-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+
+    30% {
+        -webkit-transform: scale3d(1.25, 0.75, 1);
+        -ms-transform: scale3d(1.25, 0.75, 1);
+        transform: scale3d(1.25, 0.75, 1)
+    }
+
+    40% {
+        -webkit-transform: scale3d(0.75, 1.25, 1);
+        -ms-transform: scale3d(0.75, 1.25, 1);
+        transform: scale3d(0.75, 1.25, 1)
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.15, 0.85, 1);
+        -ms-transform: scale3d(1.15, 0.85, 1);
+        transform: scale3d(1.15, 0.85, 1)
+    }
+
+    65% {
+        -webkit-transform: scale3d(0.95, 1.05, 1);
+        -ms-transform: scale3d(0.95, 1.05, 1);
+        transform: scale3d(0.95, 1.05, 1)
+    }
+
+    75% {
+        -webkit-transform: scale3d(1.05, 0.95, 1);
+        -ms-transform: scale3d(1.05, 0.95, 1);
+        transform: scale3d(1.05, 0.95, 1)
+    }
+
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        -ms-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+}

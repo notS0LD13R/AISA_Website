@@ -22,14 +22,14 @@ const maincamera = new THREE.PerspectiveCamera(
     0.1,//Near Plane
     1000//Far Plane
 )
-maincamera.position.set(0,0,.5)
+maincamera.position.set(0,0,2.5)
 
 const scene= new THREE.Scene();
 
 const loader=new GLTFLoader()
 let earth:any=null
 
-loader.load('/3dModels/earth1.glb',
+loader.load('/3dModels/earth.glb',
     (gltf)=>{
         //console.log(gltf)
         earth=gltf.scene
@@ -38,8 +38,8 @@ loader.load('/3dModels/earth1.glb',
         scene.add(earth)
         
     },
-    (progress)=>{
-         console.log('progress:',progress.loaded/progress.total)
+    ()=>{
+        //  console.log('progress:',progress.loaded/progress.total)
     },
     ()=>{
         // console.log(error)
@@ -48,8 +48,8 @@ loader.load('/3dModels/earth1.glb',
 
 const light=new THREE.DirectionalLight(0xFFFFFF,5)
 light.position.set(0,0,5)
-scene.add(light)
-const alight = new THREE.AmbientLight( 0x404040 ); // soft white light
+//scene.add(light)
+const alight = new THREE.AmbientLight( 0xFFFFFF,3 ); // soft white light
 scene.add( alight );
 
 const rotationSpeed={
