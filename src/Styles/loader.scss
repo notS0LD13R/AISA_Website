@@ -1,0 +1,85 @@
+.loader{
+    position: fixed;
+    z-index: 100;
+
+}
+
+
+
+#example-2{
+	
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+	position: fixed;
+	z-index: 1000;
+	animation:10s forwards turn-off;
+
+	&::before{
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: black;
+        margin: calc(50vh - 100px) calc(50vw - 100px);
+        border-radius: 50%;
+        transform: scale(0);
+		transition: .5s;
+		animation:10s forwards turn-off;
+    }
+    
+
+    &.active{
+		display: flex;
+        &::before{  
+            transform: scale(10);
+        }
+
+		.bar{
+			transform: scale(1);
+		}
+    }
+
+	
+}
+
+.bar{
+	position: relative;
+
+
+    margin: 0.4em;
+    width: 1.5em;
+    height: 5em;
+	
+    border: 0.1em solid #05B790;
+    border-left: 0.1em solid #05B790;
+    background-color: #05B790;
+
+    animation: 1.5s infinite example-two;
+	transition: .5s;
+	transform: scale(0);
+}
+
+#bar-2{animation-delay: 0.25s}
+#bar-3{animation-delay: 0.5s}
+
+@keyframes example-two{
+    0% {height: 2.5em}
+    25% {height: 5em}
+    50% {height: 2.5em}
+    100% {height: 2.5em}
+}
+
+@keyframes turn-off{
+	0%{
+		opacity: 1;
+	}
+	90%{
+		opacity: .99;
+	}
+	100%{
+		opacity: 0;
+	}
+}

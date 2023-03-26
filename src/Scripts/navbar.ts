@@ -39,8 +39,8 @@ export default()=>{
     let aboutusheight:number=somebsheight-abouter.offsetHeight;
 
 
-    var arr:number[];
-    arr=[aboutusheight,somebsheight,galleryheight,footerheight];
+    // var arr:number[];
+    // arr=[aboutusheight,somebsheight,galleryheight,footerheight];
     
     if (window.scrollY>footerheight){
         prev.classList.remove('is-active');
