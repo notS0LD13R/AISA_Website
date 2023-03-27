@@ -437,6 +437,12 @@ body{
             }
 
             &.special{
+
+
+                &::before{
+                    background-size: 1000px;
+                }
+
                 display:grid;
                 grid-template-columns: 1fr 3fr;
                 grid-template-rows: 0.5fr 1fr;
@@ -471,6 +477,17 @@ body{
             }
         }
     }
+@media (max-width:1000px) { 
+    
+    
+    .special{
+        width: 90vw !important;
+        height: auto !important;
+
+        
+    }
+    
+}
     .WhatWeDo-container{
         
         h1{
