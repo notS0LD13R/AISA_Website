@@ -853,7 +853,7 @@ $galeryprime: rgb(5,183,144,0.29) ;
             
         }
         img{
-            grid-row: span 4;
+            grid-row: span 5;
             grid-column: span 1;
             height: 100%;
             width: 100%;
@@ -1138,4 +1138,28 @@ $galeryprime: rgb(5,183,144,0.29) ;
         -ms-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1)
     }
+}
+
+
+.red-pill{
+    font-weight: bold;
+    font-size: 12.5px;
+    background: linear-gradient(25deg, rgb(214, 76, 127), rgb(238, 71, 88) 50%);
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    width: 30%;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    padding: 1px;
+
+}
+
+.carousel-header{
+    display: flex;
+    justify-content:  space-evenly !important; 
+    align-items: center;
 }
